@@ -8,31 +8,36 @@
 </head>
 <body>
     <div class="container">
-    <div id="name" data-testid="slackUserName">
-        <p>Atimma</p>
+    <div id="name">
+        <p data-testid="slackUserName">ati-mma</p>
     </div> 
-    <div id="row" data-testid="slackDisplayImage">
-        <img src="image/snapp.jpg" alt="Atimma" >
+    <div id="row" >
+        <img src="image/snapp.png" data-testid="slackDisplayImage" alt="ati-mma" >
     </div>
-    <div id="day" data-testid="currentDayOfTheWeek">
-        <p>Friday</p>
+    <div id="day">
+        <p id="currentDay" data-testid="currentDayOfTheWeek"></p>
     </div>
     
-    <div id="time" data-testid="currentUTCTime">
-        <p id="currentutc"></p>
-    <script>
-    const d= new Date();
-    let ms=d.getUTCMilliseconds();
-    document.getElementById("currentutc").innerHTML=ms;
-    </script>
+    <div id="time" >
+        <p id="currentutc" data-testid="currentUTCTime"></p>
+
     </div>
 
-    <div id="track" data-testid="myTrack">
-        <p>Frontend</p>
+    <div id="track" >
+        <p data-testid="myTrack">Frontend</p>
     </div>
-    <div id="link" data-testid="githubURL">
-        <a href="https://github.com/ati-mma/ati-mma.github.io" > Github</a>
+    <div id="link" >
+        <a href="https://github.com/ati-mma/ati-mma.github.io" data-testid="githubURL" > Github</a>
     </div>
+    <script>
+        const days=["sunday","monday","tuesday","wednesday","thursday","friday","saturday"];
+        const p= new Date("2023-09-10");
+        let day=days[p.getDay()];
+        document.getElementById("currentDay").innerHTML=day;
+        const d= new Date();
+        let ms=d.getUTCMilliseconds();
+        document.getElementById("currentutc").innerHTML=ms;
+        </script>
     </div>
 
 
